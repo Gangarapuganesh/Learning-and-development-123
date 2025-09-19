@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SQL Course - Ganesh L&D Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Quiz Checker
+    function checkAnswer(q, correct, resultId) {
+      let answer = document.querySelector(`input[name="${q}"]:checked`);
+      let result = document.getElementById(resultId);
+
+      if (!answer) {
+        result.innerHTML = "⚠️ Please select an option!";
+        result.style.color = "orange";
+      } else if (answer.value === correct) {
+        result.innerHTML = "✅ Correct!";
+        result.style.color = "green";
+      } else {
+        result.innerHTML = "❌ Wrong! Try again.";
+        result.style.color = "red";
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>SQL Learning</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="excel.html">Excel</a>
+      <a href="sql.html">SQL</a>
+      <a href="powerbi.html">Power BI</a>
+    </nav>
+  </header>
+
+  <!-- Course Content -->
+  <section>
+    <h2>📘 SQL Basics</h2>
+    <ul>
+      <li>Introduction to Databases</li>
+      <li>Creating Tables (DDL)</li>
+      <li>Inserting & Updating Data (DML)</li>
+      <li>Basic Queries with SELECT</li>
+    </ul>
+
+    <h2>📗 SQL Advanced</h2>
+    <ul>
+      <li>Joins (INNER, LEFT, RIGHT, FULL)</li>
+      <li>Subqueries & CTEs</li>
+      <li>Aggregate Functions (SUM, AVG, COUNT)</li>
+      <li>Indexes & Optimization</li>
+    </ul>
+  </section>
+
+  <!-- Practice Zone -->
+  <section class="practice">
+    <h2>📂 Practice Zone</h2>
+    <p>Download sample SQL scripts to practice:</p>
+    <ul>
+      <li><a href="sql_basics.sql" download>SQL Basics Script</a></li>
+      <li><a href="sql_sales.sql" download>Sales Database Script</a></li>
+    </ul>
+  </section>
+
+  <!-- Quiz Section -->
+  <section class="quiz">
+    <h2>📝 Quick Quiz</h2>
+
+    <p>Q1: Which SQL command is used to retrieve data from a database?</p>
+    <label><input type="radio" name="q1" value="insert"> INSERT</label><br>
+    <label><input type="radio" name="q1" value="select"> SELECT</label><br>
+    <label><input type="radio" name="q1" value="update"> UPDATE</label><br>
+    <button onclick="checkAnswer('q1','select','result1')" class="btn">Submit</button>
+    <p id="result1"></p>
+
+    <p>Q2: Which SQL clause is used to filter results?</p>
+    <label><input type="radio" name="q2" value="order"> ORDER BY</label><br>
+    <label><input type="radio" name="q2" value="where"> WHERE</label><br>
+    <label><input type="radio" name="q2" value="group"> GROUP BY</label><br>
+    <button onclick="checkAnswer('q2','where','result2')" class="btn">Submit</button>
+    <p id="result2"></p>
+
+    <p>Q3: Which JOIN returns all rows from both tables, matching or not?</p>
+    <label><input type="radio" name="q3" value="inner"> INNER JOIN</label><br>
+    <label><input type="radio" name="q3" value="left"> LEFT JOIN</label><br>
+    <label><input type="radio" name="q3" value="full"> FULL JOIN</label><br>
+    <button onclick="checkAnswer('q3','full','result3')" class="btn">Submit</button>
+    <p id="result3"></p>
+  </section>
+
+  <!-- Hands-on Exercises -->
+  <section class="exercise">
+    <h2>💻 Hands-On Exercises</h2>
+    <ol>
+      <li>Using <a href="sql_basics.sql" download>SQL Basics Script</a>, create a <code>students</code> table and insert 5 rows.</li>
+      <li>Using <a href="sql_sales.sql" download>Sales Script</a>, write a query to find total revenue per product.</li>
+      <li>Write a query to get customers who purchased more than 2 products.</li>
+    </ol>
+  </section>
+
+  <footer>
+    <p>Prepared by: Gangarapu Ganesh | © 2025</p>
+  </footer>
+</body>
+</html>

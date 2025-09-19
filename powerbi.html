@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Power BI Course - Ganesh L&D Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Quiz Checker
+    function checkAnswer(q, correct, resultId) {
+      let answer = document.querySelector(`input[name="${q}"]:checked`);
+      let result = document.getElementById(resultId);
+
+      if (!answer) {
+        result.innerHTML = "⚠️ Please select an option!";
+        result.style.color = "orange";
+      } else if (answer.value === correct) {
+        result.innerHTML = "✅ Correct!";
+        result.style.color = "green";
+      } else {
+        result.innerHTML = "❌ Wrong! Try again.";
+        result.style.color = "red";
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Power BI Learning</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="excel.html">Excel</a>
+      <a href="sql.html">SQL</a>
+      <a href="powerbi.html">Power BI</a>
+    </nav>
+  </header>
+
+  <!-- Course Content -->
+  <section>
+    <h2>📘 Power BI Basics</h2>
+    <ul>
+      <li>Introduction to Power BI</li>
+      <li>Connecting to Data Sources</li>
+      <li>Basic Visualizations</li>
+      <li>Data Cleaning in Power Query</li>
+    </ul>
+
+    <h2>📗 Power BI Advanced</h2>
+    <ul>
+      <li>DAX Functions (SUM, CALCULATE, FILTER)</li>
+      <li>Relationships & Data Modeling</li>
+      <li>Advanced Visualizations</li>
+      <li>Publishing Reports & Dashboards</li>
+    </ul>
+  </section>
+
+  <!-- Practice Zone -->
+  <section class="practice">
+    <h2>📂 Practice Zone</h2>
+    <p>Download sample datasets for Power BI practice:</p>
+    <ul>
+      <li><a href="powerbi_sales.xlsx" download>Sales Data</a></li>
+      <li><a href="powerbi_hr.xlsx" download>HR Data</a></li>
+    </ul>
+  </section>
+
+  <!-- Quiz Section -->
+  <section class="quiz">
+    <h2>📝 Quick Quiz</h2>
+
+    <p>Q1: Which language is used in Power BI for calculations?</p>
+    <label><input type="radio" name="q1" value="sql"> SQL</label><br>
+    <label><input type="radio" name="q1" value="dax"> DAX</label><br>
+    <label><input type="radio" name="q1" value="excel"> Excel Formulas</label><br>
+    <button onclick="checkAnswer('q1','dax','result1')" class="btn">Submit</button>
+    <p id="result1"></p>
+
+    <p>Q2: Which feature is used for cleaning and transforming data?</p>
+    <label><input type="radio" name="q2" value="dax"> DAX</label><br>
+    <label><input type="radio" name="q2" value="powerquery"> Power Query</label><br>
+    <label><input type="radio" name="q2" value="model"> Data Model</label><br>
+    <button onclick="checkAnswer('q2','powerquery','result2')" class="btn">Submit</button>
+    <p id="result2"></p>
+  </section>
+
+  <!-- Hands-on Exercises -->
+  <section class="exercise">
+    <h2>💻 Hands-On Exercises</h2>
+    <ol>
+      <li>Using <a href="powerbi_sales.xlsx" download>Sales Data</a>, create a bar chart of revenue by month.</li>
+      <li>Using <a href="powerbi_hr.xlsx" download>HR Data</a>, create a report showing employees by department and average salary.</li>
+      <li>Write a DAX formula to calculate Total Revenue = SUM(Quantity * Price).</li>
+    </ol>
+  </section>
+
+  <footer>
+    <p>Prepared by: Gangarapu Ganesh | © 2025</p>
+  </footer>
+</body>
+</html>

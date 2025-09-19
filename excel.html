@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Excel Course - Ganesh L&D Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Quiz Checker
+    function checkAnswer(q, correct, resultId) {
+      let answer = document.querySelector(`input[name="${q}"]:checked`);
+      let result = document.getElementById(resultId);
+
+      if (!answer) {
+        result.innerHTML = "⚠️ Please select an option!";
+        result.style.color = "orange";
+      } else if (answer.value === correct) {
+        result.innerHTML = "✅ Correct!";
+        result.style.color = "green";
+      } else {
+        result.innerHTML = "❌ Wrong! Try again.";
+        result.style.color = "red";
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Excel Learning</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="excel.html">Excel</a>
+      <a href="sql.html">SQL</a>
+      <a href="powerbi.html">Power BI</a>
+    </nav>
+  </header>
+
+  <!-- Course Content -->
+  <section>
+    <h2>📘 Excel Basics</h2>
+    <ul>
+      <li>Introduction to Excel</li>
+      <li>Basic Formulas & Functions</li>
+      <li>Data Entry & Formatting</li>
+      <li>Charts & Visualization</li>
+    </ul>
+
+    <h2>📗 Excel Advanced</h2>
+    <ul>
+      <li>Pivot Tables & Pivot Charts</li>
+      <li>Advanced Formulas (IF, VLOOKUP, INDEX-MATCH)</li>
+      <li>Data Cleaning & Validation</li>
+      <li>Macros & Automation</li>
+    </ul>
+  </section>
+
+  <!-- Practice Zone -->
+  <section class="practice">
+    <h2>📂 Practice Zone</h2>
+    <p>Download sample Excel files to practice:</p>
+    <ul>
+      <li><a href="excel_basics.xlsx" download>Excel Basics File</a></li>
+      <li><a href="sales_data.xlsx" download>Sales Data File</a></li>
+      <li><a href="pivot_practice.xlsx" download>Pivot Table Practice</a></li>
+    </ul>
+  </section>
+
+  <!-- Quiz Section -->
+  <section class="quiz">
+    <h2>📝 Quick Quiz</h2>
+
+    <p>Q1: Which Excel function is used to look up a value from a table?</p>
+    <label><input type="radio" name="q1" value="sum"> SUM</label><br>
+    <label><input type="radio" name="q1" value="vlookup"> VLOOKUP</label><br>
+    <label><input type="radio" name="q1" value="count"> COUNT</label><br>
+    <button onclick="checkAnswer('q1','vlookup','result1')" class="btn">Submit</button>
+    <p id="result1"></p>
+
+    <p>Q2: Which shortcut is used to create a new worksheet?</p>
+    <label><input type="radio" name="q2" value="ctrln"> Ctrl + N</label><br>
+    <label><input type="radio" name="q2" value="ctrlshiftn"> Ctrl + Shift + N</label><br>
+    <label><input type="radio" name="q2" value="shiftf11"> Shift + F11</label><br>
+    <button onclick="checkAnswer('q2','shiftf11','result2')" class="btn">Submit</button>
+    <p id="result2"></p>
+
+    <p>Q3: Which chart type is best for showing trends over time?</p>
+    <label><input type="radio" name="q3" value="pie"> Pie Chart</label><br>
+    <label><input type="radio" name="q3" value="line"> Line Chart</label><br>
+    <label><input type="radio" name="q3" value="bar"> Bar Chart</label><br>
+    <button onclick="checkAnswer('q3','line','result3')" class="btn">Submit</button>
+    <p id="result3"></p>
+  </section>
+
+  <!-- Hands-on Exercises -->
+  <section class="exercise">
+    <h2>💻 Hands-On Exercises</h2>
+    <ol>
+      <li>Download the <a href="sales_data.xlsx" download>Sales Data File</a> and calculate total revenue using a formula.</li>
+      <li>Use Pivot Table on <a href="pivot_practice.xlsx" download>Pivot Data</a> to find sales by region.</li>
+      <li>Create a Line Chart to show monthly sales trends.</li>
+    </ol>
+  </section>
+
+  <footer>
+    <p>Prepared by: Gangarapu Ganesh | © 2025</p>
+  </footer>
+</body>
+</html>

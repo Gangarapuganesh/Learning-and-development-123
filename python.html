@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python Course - Learning Hub</title>
+<link rel="stylesheet" href="style.css">
+<script>
+function checkAnswer(q, correct, resultId){
+let answer=document.querySelector(`input[name="${q}"]:checked`);
+let result=document.getElementById(resultId);
+if(!answer){ result.innerHTML="⚠️ Select an option!"; result.style.color="orange"; }
+else if(answer.value===correct){ result.innerHTML="✅ Correct!"; result.style.color="green"; }
+else{ result.innerHTML="❌ Wrong! Try again."; result.style.color="red"; }
+}
+</script>
+</head>
+<body>
+<header>
+<h1>Python Learning</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="excel.html">Excel</a>
+<a href="sql.html">SQL</a>
+<a href="powerbi.html">Power BI</a>
+<a href="python.html">Python</a>
+</nav>
+</header>
+
+<section>
+<h2>📘 Python Basics</h2>
+<ul>
+<li>Introduction & Installation</li>
+<li>Variables & Data Types</li>
+<li>Control Flow (if, loops)</li>
+<li>Functions & Modules</li>
+</ul>
+
+<h2>📗 Python Advanced</h2>
+<ul>
+<li>Lists, Dictionaries, Tuples</li>
+<li>Pandas for Data Analysis</li>
+<li>Matplotlib & Visualization</li>
+<li>File Handling & Automation</li>
+</ul>
+</section>
+
+<section class="practice">
+<h2>📂 Practice Zone</h2>
+<ul>
+<li><a href="python_basics.py" download>Python Basics Script</a></li>
+<li><a href="python_data.csv" download>Sample Data CSV</a></li>
+</ul>
+</section>
+
+<section class="quiz">
+<h2>📝 Quiz</h2>
+<p>Q1: Which of these is Python’s data type?</p>
+<label><input type="radio" name="q1" value="int"> int</label><br>
+<label><input type="radio" name="q1" value="varchar"> varchar</label><br>
+<label><input type="radio" name="q1" value="number"> number</label><br>
+<button onclick="checkAnswer('q1','int','result1')">Submit</button>
+<p id="result1"></p>
+
+<p>Q2: Which library is used for data analysis in Python?</p>
+<label><input type="radio" name="q2" value="numpy"> Numpy</label><br>
+<label><input type="radio" name="q2" value="pandas"> Pandas</label><br>
+<label><input type="radio" name="q2" value="matplotlib"> Matplotlib</label><br>
+<button onclick="checkAnswer('q2','pandas','result2')">Submit</button>
+<p id="result2"></p>
+</section>
+
+<section class="exercise">
+<h2>💻 Hands-on Exercises</h2>
+<ol>
+<li>Write a Python script to calculate sum of numbers 1 to 50 (<a href="python_basics.py" download>Python Basics</a>).</li>
+<li>Use <a href="python_data.csv" download>Sample CSV</a> and load in Pandas, find average values.</li>
+<li>Create a Matplotlib line chart of sample data.</li>
+</ol>
+</section>
+
+<footer><p>Prepared by Ganesh | ©2025</p></footer>
+</body>
+</html>
